@@ -1,0 +1,364 @@
+{
+  "teacher_model": "grok-4.7",
+  "student_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "method": "hard-label sequence distillation (completion-only LoRA)",
+  "max_steps": 112,
+  "train_seconds": 21.8,
+  "train_loss": 0.19693035346322826,
+  "teacher_agrees_with_codebook": {
+    "train": "14/14",
+    "holdout": "6/6"
+  },
+  "base": {
+    "train": {
+      "n": 14,
+      "match_teacher": 4,
+      "match_gold": 4,
+      "rows": [
+        {
+          "id": "tr01",
+          "text": "Unworn sweater returned on day 9.",
+          "gold": "REFUND",
+          "teacher": "REFUND",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr02",
+          "text": "Unworn pullover, tags on, back after 4 days.",
+          "gold": "REFUND",
+          "teacher": "REFUND",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr03",
+          "text": "Worn jumper returned on day 11.",
+          "gold": "EXCHANGE",
+          "teacher": "EXCHANGE",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr04",
+          "text": "Knit top with pilling, returned on day 6.",
+          "gold": "EXCHANGE",
+          "teacher": "EXCHANGE",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr05",
+          "text": "Unworn knit scarf returned on day 20.",
+          "gold": "CREDIT",
+          "teacher": "CREDIT",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr06",
+          "text": "Sweater back after 30 days, never worn.",
+          "gold": "CREDIT",
+          "teacher": "CREDIT",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr07",
+          "text": "Unworn coat returned on day 12.",
+          "gold": "REFUND",
+          "teacher": "REFUND",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr08",
+          "text": "Jacket, tags on, day 28.",
+          "gold": "REFUND",
+          "teacher": "REFUND",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr09",
+          "text": "Worn parka returned on day 15.",
+          "gold": "ESCALATE",
+          "teacher": "ESCALATE",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr10",
+          "text": "Jacket with a scuffed cuff, day 22.",
+          "gold": "ESCALATE",
+          "teacher": "ESCALATE",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr11",
+          "text": "Unworn coat returned on day 45.",
+          "gold": "CREDIT",
+          "teacher": "CREDIT",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr12",
+          "text": "Parka back after 60 days, never worn.",
+          "gold": "CREDIT",
+          "teacher": "CREDIT",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr13",
+          "text": "No receipt for an unworn shirt on day 3.",
+          "gold": "ESCALATE",
+          "teacher": "ESCALATE",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr14",
+          "text": "Sale-price beanie, unworn, returned yesterday.",
+          "gold": "CREDIT",
+          "teacher": "CREDIT",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        }
+      ]
+    },
+    "holdout": {
+      "n": 6,
+      "match_teacher": 2,
+      "match_gold": 2,
+      "rows": [
+        {
+          "id": "ho01",
+          "text": "Customer brings back an unworn sweater on day 7.",
+          "gold": "REFUND",
+          "teacher": "REFUND",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "ho02",
+          "text": "A jumper with signs of wear, returned on day 8.",
+          "gold": "EXCHANGE",
+          "teacher": "EXCHANGE",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "ho03",
+          "text": "Wool coat, never worn, returned on day 19.",
+          "gold": "REFUND",
+          "teacher": "REFUND",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "ho04",
+          "text": "Parka with a torn pocket, returned on day 27.",
+          "gold": "ESCALATE",
+          "teacher": "ESCALATE",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "ho05",
+          "text": "Unworn jacket returned after 50 days.",
+          "gold": "CREDIT",
+          "teacher": "CREDIT",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "ho06",
+          "text": "Clearance scarf, still unworn, returned yesterday.",
+          "gold": "CREDIT",
+          "teacher": "CREDIT",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        }
+      ]
+    }
+  },
+  "student": {
+    "train": {
+      "n": 14,
+      "match_teacher": 14,
+      "match_gold": 14,
+      "rows": [
+        {
+          "id": "tr01",
+          "text": "Unworn sweater returned on day 9.",
+          "gold": "REFUND",
+          "teacher": "REFUND",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr02",
+          "text": "Unworn pullover, tags on, back after 4 days.",
+          "gold": "REFUND",
+          "teacher": "REFUND",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr03",
+          "text": "Worn jumper returned on day 11.",
+          "gold": "EXCHANGE",
+          "teacher": "EXCHANGE",
+          "student_raw": "ACTION EXCHANGE",
+          "student": "EXCHANGE"
+        },
+        {
+          "id": "tr04",
+          "text": "Knit top with pilling, returned on day 6.",
+          "gold": "EXCHANGE",
+          "teacher": "EXCHANGE",
+          "student_raw": "ACTION EXCHANGE",
+          "student": "EXCHANGE"
+        },
+        {
+          "id": "tr05",
+          "text": "Unworn knit scarf returned on day 20.",
+          "gold": "CREDIT",
+          "teacher": "CREDIT",
+          "student_raw": "ACTION CREDIT",
+          "student": "CREDIT"
+        },
+        {
+          "id": "tr06",
+          "text": "Sweater back after 30 days, never worn.",
+          "gold": "CREDIT",
+          "teacher": "CREDIT",
+          "student_raw": "ACTION CREDIT",
+          "student": "CREDIT"
+        },
+        {
+          "id": "tr07",
+          "text": "Unworn coat returned on day 12.",
+          "gold": "REFUND",
+          "teacher": "REFUND",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr08",
+          "text": "Jacket, tags on, day 28.",
+          "gold": "REFUND",
+          "teacher": "REFUND",
+          "student_raw": "ACTION REFUND",
+          "student": "REFUND"
+        },
+        {
+          "id": "tr09",
+          "text": "Worn parka returned on day 15.",
+          "gold": "ESCALATE",
+          "teacher": "ESCALATE",
+          "student_raw": "ACTION ESCALATE",
+          "student": "ESCALATE"
+        },
+        {
+          "id": "tr10",
+          "text": "Jacket with a scuffed cuff, day 22.",
+          "gold": "ESCALATE",
+          "teacher": "ESCALATE",
+          "student_raw": "ACTION ESCALATE",
+          "student": "ESCALATE"
+        },
+        {
+          "id": "tr11",
+          "text": "Unworn coat returned on day 45.",
+          "gold": "CREDIT",
+          "teacher": "CREDIT",
+          "student_raw": "ACTION CREDIT",
+          "student": "CREDIT"
+        },
+        {
+          "id": "tr12",
+          "text": "Parka back after 60 days, never worn.",
+          "gold": "CREDIT",
+          "teacher": "CREDIT",
+          "student_raw": "ACTION CREDIT",
+          "student": "CREDIT"
+        },
+        {
+          "id": "tr13",
+          "text": "No receipt for an unworn shirt on day 3.",
+          "gold": "ESCALATE",
+          "teacher": "ESCALATE",
+          "student_raw": "ACTION ESCALATE",
+          "student": "ESCALATE"
+        },
+        {
+          "id": "tr14",
+          "text": "Sale-price beanie, unworn, returned yesterday.",
+          "gold": "CREDIT",
+          "teacher": "CREDIT",
+          "student_raw": "ACTION CREDIT",
+          "student": "CREDIT"
+        }
+      ]
+    },
+    "holdout": {
+      "n": 6,
+      "match_teacher": 3,
+      "match_gold": 3,
+      "rows": [
+        {
+          "id": "ho01",
+          "text": "Customer brings back an unworn sweater on day 7.",
+          "gold": "REFUND",
+          "teacher": "REFUND",
+          "student_raw": "ACTION CREDIT",
+          "student": "CREDIT"
+        },
+        {
+          "id": "ho02",
+          "text": "A jumper with signs of wear, returned on day 8.",
+          "gold": "EXCHANGE",
+          "teacher": "EXCHANGE",
+          "student_raw": "ACTION EXCHANGE",
+          "student": "EXCHANGE"
+        },
+        {
+          "id": "ho03",
+          "text": "Wool coat, never worn, returned on day 19.",
+          "gold": "REFUND",
+          "teacher": "REFUND",
+          "student_raw": "ACTION CREDIT",
+          "student": "CREDIT"
+        },
+        {
+          "id": "ho04",
+          "text": "Parka with a torn pocket, returned on day 27.",
+          "gold": "ESCALATE",
+          "teacher": "ESCALATE",
+          "student_raw": "ACTION EXCHANGE",
+          "student": "EXCHANGE"
+        },
+        {
+          "id": "ho05",
+          "text": "Unworn jacket returned after 50 days.",
+          "gold": "CREDIT",
+          "teacher": "CREDIT",
+          "student_raw": "ACTION CREDIT",
+          "student": "CREDIT"
+        },
+        {
+          "id": "ho06",
+          "text": "Clearance scarf, still unworn, returned yesterday.",
+          "gold": "CREDIT",
+          "teacher": "CREDIT",
+          "student_raw": "ACTION CREDIT",
+          "student": "CREDIT"
+        }
+      ]
+    }
+  }
+}
