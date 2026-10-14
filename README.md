@@ -6,6 +6,8 @@ Grok 4.7 reads a private codebook. Qwen2.5-0.5B never does. The small model is t
 
 This repo is that run, with the labels, the scores, and the adapter. You can retrain the student with no API key. The twenty teacher replies are already in [`data/teacher.jsonl`](data/teacher.jsonl).
 
+The same story is written out in [Sequence-level Distillation](BLOG.md). That piece is also on [Medium](https://cobusgreyling.medium.com/sequence-level-distillation-02351f01a1ef).
+
 | | Train, 14 lines | Holdout, 6 new wordings |
 |---|---:|---:|
 | Stock Qwen 0.5B | 4 / 14 | 2 / 6 |
@@ -131,8 +133,11 @@ Ask it the same way the trainer does. System text: “You are the Northline retu
 | [`data/teacher.jsonl`](data/teacher.jsonl) | 20 Grok replies. 14 train, 6 holdout. `gold` is the codebook, `teacher` is Grok |
 | [`outputs/results.json`](outputs/results.json) | Stock and student answers for every case |
 | [`outputs/lora`](outputs/lora) | The adapter from the 112-step run |
+| [`BLOG.md`](BLOG.md) | The published write-up |
 | [`assets/header.png`](assets/header.png) | The figure at the top |
 | [`assets/flow.png`](assets/flow.png) | The figure above |
+| [`assets/teacher-student.png`](assets/teacher-student.png) | Grok in the cloud, Qwen on the laptop |
+| [`assets/case-to-action.png`](assets/case-to-action.png) | A case pointing at the action lines |
 | [`requirements.txt`](requirements.txt) | torch, transformers, peft, trl, datasets, openai |
 
 Each JSONL row has `id`, `split`, `text`, `gold`, `teacher`, `teacher_raw`, `prompt`, and `completion`. The trainer uses `prompt` and `completion` on rows whose split is `train`.
